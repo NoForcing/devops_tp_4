@@ -13,12 +13,12 @@ pipeline {
         stage('Setup') {
             steps {
                 sh 'python3 -m venv venv'  // Crée un environnement virtuel
-                sh './venv/Scripts/pip install -r requirements.txt'  // Installe les dépendances
+                sh './venv/bin/pip install -r requirements.txt'  // Installe les dépendances
             }
         }
         stage('Run Script') {
             steps {
-                sh './venv/Scripts/python app.py'  // Exécute le script Python
+                sh './venv/bin/python app.py'  // Exécute le script Python
             }
         }
         stage('Notify') {
