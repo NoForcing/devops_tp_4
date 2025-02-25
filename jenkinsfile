@@ -43,7 +43,7 @@ pipeline {
                 body: "Échec du pipeline : ${env.BUILD_URL}",
                 to: 'jeanfabriceouffoue@gmail.com',
                 from: 'jeanfabriceouffoue2002@gmail.com',
-                repyTo: 'jeanfabriceouffoue2002@gmail.com',
+                replyTo: 'jeanfabriceouffoue2002@gmail.com',
 
             )
         }
