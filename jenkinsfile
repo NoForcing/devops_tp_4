@@ -25,7 +25,7 @@ pipeline {
                 script {
                     def jobName=env.JOB_NAME
                     def buildNumber=env.BUILD_NUMBER
-                    def pipelineStatus=currentBuild.result ?:"UNKNOWN"
+                    def pipelineStatus=currentBuild.result
                     def bannerColor=pipelineStatus.toUpperCase()=='SUCCESS'? "green" :"red"
                     def body= """  
                                 <html>
