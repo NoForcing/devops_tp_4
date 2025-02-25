@@ -30,7 +30,7 @@ pipeline {
                         to: 'jeanfabriceouffoue@gmail.com',
                         from: 'jeanfabriceouffoue2002@gmail.com',
                         //replyTo:'jeanfabriceouffoue2002@gmail.com',
-                }
+                   }
             }
         }
     }
