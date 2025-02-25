@@ -28,6 +28,8 @@ pipeline {
                     emailext subject: "Jenkins Build: ${result}",
                         body: "Build Status: ${result}\nVoir Jenkins: ${env.BUILD_URL}",
                         to: 'jeanfabriceouffoue@gmail.com'
+                        from: 'jenkins@example.com',
+                        replyTo:'jenkins@example.com',
                 }
             }
         }
@@ -38,7 +40,9 @@ pipeline {
         failure {
             emailext subject: "Échec du build Jenkins",
                 body: "Échec du pipeline : ${env.BUILD_URL}",
-                to: 'jeanfabriceouffoue@gmail.com'
+                to: 'jeanfabriceouffoue@gmail.com',
+                from: 'jenkins@example.com',
+                replyTo:'jenkins@example.com',
         }
     }
 }
