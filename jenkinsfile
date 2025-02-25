@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     environment {
@@ -25,31 +24,23 @@ pipeline {
             steps {
                 script {
                     def result = currentBuild.result ?: 'SUCCESS'
-                    emailext subject: "Jenkins Build: ${result}",
+                    emailext(
+                        subject: "Jenkins Build: ${result}",
                         body: "Build Status: ${result}\nVoir Jenkins: ${env.BUILD_URL}",
-                        to: 'jeanfabriceouffoue@gmail.com',
-                        
-                   }
+                        to: 'jeanfabriceouffoue@gmail.com'
+                    )
+                }
             }
         }
     }
 
-
     post {
         failure {
-            emailext subject: "Échec du build Jenkins",
+            emailext(
+                subject: "Échec du build Jenkins",
                 body: "Échec du pipeline : ${env.BUILD_URL}",
-                to: 'jeanfabriceouffoue@gmail.com',
-                
+                to: 'jeanfabriceouffoue@gmail.com'
+            )
         }
     }
 }
-
-
-
-
-
-
-
-
-
