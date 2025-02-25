@@ -29,7 +29,7 @@ pipeline {
                         body: "Build Status: ${result}\nVoir Jenkins: ${env.BUILD_URL}",
                         to: 'jeanfabriceouffoue@gmail.com',
                         from: 'jeanfabriceouffoue2002@gmail.com',
-                        replyTo:'jeanfabriceouffoue2002@gmail.com',
+                        //replyTo:'jeanfabriceouffoue2002@gmail.com',
                 }
             }
         }
@@ -42,7 +42,7 @@ pipeline {
                 body: "Échec du pipeline : ${env.BUILD_URL}",
                 to: 'jeanfabriceouffoue@gmail.com',
                 from: 'jeanfabriceouffoue2002@gmail.com',
-                replyTo:'jeanfabriceouffoue2002@gmail.com',
+                //replyTo:'jeanfabriceouffoue2002@gmail.com',
         }
     }
 }
